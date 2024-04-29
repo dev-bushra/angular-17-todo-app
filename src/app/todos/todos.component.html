@@ -5,7 +5,6 @@
 <div class="container add-todo-box-container">
   <div class="add-todo-box">
 
-    <!-- add form things and import ngForm in this component controller -->
     <form #todoForm="ngForm" (ngSubmit)="onFormSubmit(todoForm)">
       <h2 class="title is-5">New Todo</h2>
 
@@ -23,8 +22,7 @@
       </div>
 
       <div *ngIf="todoTextField.invalid && showValidationErrors">
-        <p class="help is-danger" *ngIf="todoTextField.errors.required">Please enter the text of your todo</p>
-        <p class="help is-danger" *ngIf="todoTextField.errors.minlength">Todo text must be at least 2 characters</p>
+        <p class="help is-danger" *ngIf="todoTextField.errors">Please enter the text of your todo</p>
       </div>
 
     </form>
@@ -36,25 +34,10 @@
   <div class="container">
 
     <div class="todos-list">
-      <div class="todo-item" *ngFor="let todo of todos">
-        <div class="check-box">
-          <i class="material-icons">check</i>
-        </div>
-
-        <div class="todo-text">
-          {{ todo.text }}
-        </div>
-
-        <div class="todo-controls-box" appToolTipSingleton>
-          <div class="todo-control-button" appToolTip="Edit Todo">
-            <i class="material-icons">edit</i>
-          </div>
-
-          <div class="todo-control-button is-danger" appToolTip="Delete Todo">
-            <i class="material-icons">delete</i>
-          </div>
-        </div>
-      </div>
+      <!-- TODO: Add Checked action and edit and delete [X] -->
+      <app-todo-item *ngFor="let todo of todos" [todo]="todo"></app-todo-item>
+      <!-- <app-todo-item *ngFor="let todo of todos" [todo]="todo" (todoClicked)="toggleCompleted(todo)"
+        (editClicked)="editTodo(todo)" (deleteClicked)="deleteTodo(todo)"></app-todo-item> -->
     </div>
 
   </div>
