@@ -1,0 +1,19 @@
+<div class="todo-item" *ngFor="let todo of todos" [class.completed]="todo.completed">
+ <div class="check-box">
+  <i class="material-icons">check</i>
+ </div>
+
+ <div class="todo-text">
+  placeholder text
+ </div>
+
+ <div class="todo-controls-box" appToolTipSingleton>
+  <div class="todo-control-button" appToolTip="Edit Todo">
+   <i class="material-icons">edit</i>
+  </div>
+
+  <div class="todo-control-button is-danger" appToolTip="Delete Todo">
+   <i class="material-icons">delete</i>
+  </div>
+ </div>
+</div>
