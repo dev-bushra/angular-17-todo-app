@@ -9,8 +9,11 @@ import { CommonModule } from '@angular/common';
   templateUrl: './todo-item.component.html',
   styleUrl: './todo-item.component.scss',
 })
+
 export class TodoItemComponent implements OnInit {
   @Input() todo!: Todo; // declaring a property called todo of type Todo that can receive data from a parent component, and you're telling the TypeScript compiler that you're sure that the todo property will be initialized before it's used.
+
+  // TODO: Make todo item functunality as edit and delete
 
   // @Output() todoClicked: EventEmitter<void> = new EventEmitter();
   // @Output() editClicked: EventEmitter<void> = new EventEmitter();
@@ -18,7 +21,9 @@ export class TodoItemComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('received Props form parent:', this.todo);
+  }
 
   // onTodoClicked() {
   //   this.todoClicked.emit();
