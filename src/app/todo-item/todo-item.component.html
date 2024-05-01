@@ -1,4 +1,4 @@
-<div class="todo-item">
+<div class="todo-item" [class.completed]="todo.completed" (click)="onTodoClicked()">
   <div class="check-box">
     <i class="material-icons">check</i>
   </div>
@@ -7,8 +7,8 @@
     {{ todo.text }}
   </div>
 
-  <div class="todo-controls-box" appToolTipSingleton>
-    <div class="todo-control-button" appToolTip="Edit Todo">
+  <div class="todo-controls-box" appToolTipSingleton (click)="$event.stopPropagation()">
+    <div class="todo-control-button" appToolTip="Edit Todo" (click)="onEditClicked()">
       <i class="material-icons">edit</i>
     </div>
 
