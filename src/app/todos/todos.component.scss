@@ -31,15 +31,17 @@
   box-shadow: 0 4px 12px rgba(black, 0.08);
 }
 
+
 // Del this when you create todo items component
+
 .todo-item {
     display: flex;
     align-items: center;
 
     position: relative;
-    
+
     cursor: pointer;
-    
+
     font-size: 18px;
 
     padding: 35px 15px;
@@ -55,7 +57,7 @@
     display: flex;
 
     flex-shrink: 0;
-    
+
     border: 2px solid #eee;
     border-radius: 50%;
 
@@ -71,7 +73,7 @@
         margin: auto;
 
         color: #333;
-        
+
         // hide by default
         opacity: 0;
 

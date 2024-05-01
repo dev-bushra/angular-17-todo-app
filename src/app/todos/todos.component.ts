@@ -5,12 +5,10 @@ import { CommonModule, NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
 import { EditTodoDialogComponent } from '../edit-todo-dialog/edit-todo-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
-import {
-  MatDialogModule,
-  MatDialog,
-} from '@angular/material/dialog';
 
+// Component Decorator
 @Component({
   selector: 'app-todos',
   standalone: true,
@@ -20,15 +18,15 @@ import {
     FormsModule,
     TodoItemComponent,
     EditTodoDialogComponent,
-    // MatDialog,
-    // MatDialogModule,
   ],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.scss',
 })
+
+
+// Component Class
 export class TodosComponent implements OnInit {
   todos: Todo[] = [];
-  // todoTextField: string = '';
   showValidationErrors: boolean = true;
 
   // inject the data service and mat dialog
@@ -60,18 +58,23 @@ export class TodosComponent implements OnInit {
   editTodo(todo: Todo) {
     // Get the index of the clicked todo
     const index = this.todos.indexOf(todo);
-
     // Open the dialog
     let dialogRef = this.dialog.open(EditTodoDialogComponent, {
       width: '700px',
       data: todo,
     });
-
     // When the dialog closes, get the result and update the todo
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.dataService.updateTodo(index, result);
       }
     });
+  }
+
+  deleteTodo(todo: Todo) {
+    // Get the index of the clicked todo
+    const index = this.todos.indexOf(todo);
+    // Delete the selected todo form the data service and the UI
+    this.dataService.deleteTodo(index);
   }
 }
