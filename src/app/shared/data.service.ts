@@ -9,12 +9,8 @@ import { Todo } from './todo.model';
 // DataService class is a service that is used to store data in the app.
 export class DataService {
   todos: Todo[] = [
-    new Todo('this is a test!', false),
-    new Todo('this is a test two!', false),
-    new Todo(
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit voluptates dolorem alias dolores deserunt, qui, amet odio facilis tempora unde sequi numquam explicabo nihil iste labore beatae ea rerum expedita.',
-      true
-    ),
+    new Todo('Check the documentation for the advanced emitters used in AngularJS', true),
+    new Todo('Eat your Lunch!', false),
   ];
 
   constructor() {}

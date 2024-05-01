@@ -1,5 +1,5 @@
 <section class="heading-section">
-  <h1 class="title is-1 has-text-centered">Todos</h1>
+  <h1 class="title is-1 has-text-centered">Bushra Todos :D</h1>
 </section>
 
 <div class="container add-todo-box-container">
@@ -34,7 +34,8 @@
   <div class="container">
 
     <div class="todos-list">
-      <app-todo-item *ngFor="let todo of todos" [todo]="todo" (todoClicked)="toggleCompleted(todo)" (editClicked)="editTodo(todo)" (deleteClicked)="deleteTodo(todo)"></app-todo-item>
+      <app-todo-item *ngFor="let todo of todos" [todo]="todo" (todoClicked)="toggleCompleted(todo)"
+        (editClicked)="editTodo(todo)" (deleteClicked)="deleteTodo(todo)"></app-todo-item>
     </div>
 
   </div>

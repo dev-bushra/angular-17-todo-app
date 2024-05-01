@@ -7,6 +7,9 @@
 
 html, body { height: 100%; }
 body { margin: 0; }
+body.mat-typography {
+    background: #ed548f17;
+}
 
 .alt-gradient-button { // global style for buttons
     border: none;
